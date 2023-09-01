@@ -1,2 +1,3 @@
 #!/bin/bash
-chmod -m u+rwd,g+rx,o+r my_dir 
+mkdir my_dir
+chmod 751 my_dir
