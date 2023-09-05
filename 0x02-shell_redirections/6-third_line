@@ -1,1 +1,2 @@
-#!/usr/bin/bash
+#!/bin/bash
+head -n3 /etc/passwd | line -n 1
