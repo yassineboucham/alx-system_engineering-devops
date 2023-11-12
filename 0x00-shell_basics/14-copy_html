@@ -1,18 +1,2 @@
 #!/bin/bash
-
-# Set the source and destination directories
-source_dir=$(pwd)
-destination_dir=$(dirname "$source_dir")
-
-# Copy HTML files only if they don't exist in the destination directory or are newer
-for file in "$source_dir"/*.html; do
-    filename=$(basename "$file")
-    destination_file="$destination_dir/$filename"
-    
-    if [ ! -e "$destination_file" ] || [ "$file" -nt "$destination_file" ]; then
-        cp "$file" "$destination_dir"
-        echo "Copied $filename to $destination_dir"
-    else
-        echo "$filename already exists and is up-to-date in $destination_dir"
-    fi
-done
+cp *.html .
