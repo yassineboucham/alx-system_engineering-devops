@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+cd |echo "127.0.0.2 localhost" > /etc/hosts
+cd |echo "8.8.8.8 facebook.com" > /etc/hosts
