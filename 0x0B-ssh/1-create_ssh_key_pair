@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
-# Create an ssh key pair with 4096 bits.
-ssh-keygen -f holberton -N "betty" -b 4096
+# Create the peer public/private key using ksa algorithm
+# passphrase will be betty
+# The private key will be named school
+# Number of bits ti generate is 4096
+
+ssh-keygen -b 4096 -N betty -f school
