@@ -1,3 +1,2 @@
 #!/bin/bash
-mv /[source_directory]/[A-Z]* /tmp/u
-
+mv [[:upper:]]* /tmp/u
