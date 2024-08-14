@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 #scrip that is displaying "Best chool" 10 time
 
 for (( i=0; i<10; i++))
