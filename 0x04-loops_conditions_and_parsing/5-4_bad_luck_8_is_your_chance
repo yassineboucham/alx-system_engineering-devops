@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # while if elif else
 
-count=0
-while [ "$count" -lt 10 ]; do
+count=1
+while [ "$count" -lt 11 ]; do
         if [ "$count" = 4 ]
         then
                 echo "bad luck"
