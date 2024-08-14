@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#scrip that is displaying "Best chool" 10 time using weile
+#scrip that is displaying "Best chool" 10 time using while
 
 count=0
 
