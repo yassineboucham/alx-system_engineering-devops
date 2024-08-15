@@ -5,9 +5,11 @@ How many subs?
 import requests
 
 
+headers = {"User-Agent": "Chrome/125.0.0.0"}
+
+
 def number_of_subscribers(subreddit):
     """Number of subs"""
-    headers = {"User-Agent": "Chrome/125.0.0.0"}
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
     r = requests.get(url, headers, allow_redirects=False)
     try:
