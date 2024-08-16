@@ -1,20 +1,41 @@
 #!/usr/bin/python3
 """
-Top 10
+Get list of hot posts of a subreddit
 """
 import requests
-
 
 headers = {"User-Agent": "MyCustomUserAgent/1.0"}
 
 
-def top_ten(subreddit):
+def page_hots(subreddit, hot_list, after_query=""):
+    """Get host posts in one page"""
     base_url = "https://www.reddit.com"
     endpoint = base_url + "/r/{}/hot.json".format(subreddit)
-    r = requests.get(endpoint, allow_redirects=False, headers=headers)
+    payload = {'after': after_query}
+    r = requests.get(
+        endpoint,
+        allow_redirects=False,
+        params=payload,
+        headers={**headers}
+    )
     if r.status_code != 200:
-        print("None")
-        return
-    hot_posts = r.json().get('data').get('children')
-    for post in hot_posts[:10]:
-        print(post.get('data').get('title'))
+        return None
+    r = r.json()
+    after = r.get('data').get('after')
+    hot_posts = r.get('data').get('children')
+    for post in hot_posts:
+        hot_list.append(post.get('data').get('title'))
+    return after
+
+
+def recurse(subreddit, hot_list=[]):
+    """Get all the hot posts"""
+    if type(subreddit) is list:
+        subreddit, after = subreddit[0], subreddit[1]
+        # print("{)", subreddit, after)
+        after = page_hots(subreddit, hot_list, after)
+    else:
+        after = page_hots(subreddit, hot_list)
+    if after:
+        recurse([subreddit, after], hot_list)
+    return hot_list
