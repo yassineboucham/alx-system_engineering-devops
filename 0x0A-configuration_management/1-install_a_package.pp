@@ -1,6 +1,6 @@
 # Using Puppet, install flask from pip3.
 
-package { 'pythone':
+package { 'pythone3.8':
     ensure => '3.8.10',
     provider => 'pip3'
 }
@@ -13,5 +13,4 @@ package { 'flask':
 package { 'Werkzeug':
   ensure   => '2.1.1',
   provider => 'pip3',
-  require => package['flask'],
 }
