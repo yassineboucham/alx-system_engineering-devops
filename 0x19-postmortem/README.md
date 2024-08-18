@@ -17,6 +17,6 @@ The issue took **4 hours** to resolve. The problem was caused by a Distributed D
 
 The root cause was a DDoS attack that overwhelmed our server. The website, still under development, was not fully prepared for such an attack. More time was needed for thorough testing. ⏳
 
-![](https://www.radware.com/cyberpedia/ddos-protection/how-to-prevent-ddos-attacks-best-practices-strategies/)
+![](./how-to-prevent-ddos-attacks.jpg)
 
 Due to the sensitivity of our data, this type of attack could potentially destroy it. To prevent future incidents, we are working on creating backups on a local server. 🗄️
