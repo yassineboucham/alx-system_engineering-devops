@@ -1,0 +1,21 @@
+server {                                                            listen 80 default_server;
+    listen [::]:80 default_server;
+
+    root /var/www/html;
+    index index.html index.htm;
+
+    server_name mydomainname.tech;
+
+    location /hbnb_static/ {
+        alias /data/web_static/current/;
+    }                                                               location /airbnb-onepage {
+        proxy_pass http://0.0.0.0:5000/airbnb-onepage;              }
+    location / {
+        proxy_pass http://0.0.0.0:5003/2-hbnb;
+    }                                                                       location /api/ {
+                proxy_pass http://localhost:5002/api/;
+        }
+
+    location /static/ {
+        alias /path/to/your/AirBnB_clone_v4/web_dynamic/static/;    }                                                               # Other configurations...
+}
